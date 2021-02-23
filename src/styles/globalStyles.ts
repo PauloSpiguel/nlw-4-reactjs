@@ -1,12 +1,13 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
 export default createGlobalStyle`
 
 :root {
+  --background: ${({ theme }) => theme.colors.background};
+  --text: ${({ theme }) => theme.colors.text};
+  --primary: ${({ theme }) => theme.colors.primary};
   --white: #fff;
-  --background: #F2F3F5;
   --gray-line: #dcdde0;
-  --text: #666666;
   --text-highlight: #b3b6ff;
   --title: #2e384d;
   --red: #e83f5b;
@@ -14,6 +15,7 @@ export default createGlobalStyle`
   --blue: #5965e0;
   --blue-dark: #4953b8;
   --blue-twitter: #2aa9e0;
+
 }
 
 * {
@@ -39,7 +41,7 @@ body, input, textarea, button {
 }
 
 body {
-  background: var(-background);
+  background: var(--background);
   color: var(--text);
 }
 
@@ -52,4 +54,4 @@ a {
   text-decoration: none;
 }
 
-`;
+`
