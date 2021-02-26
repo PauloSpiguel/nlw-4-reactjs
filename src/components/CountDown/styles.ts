@@ -1,4 +1,9 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+
+type CountDownProps = {
+  isActive: boolean
+  progress: number
+}
 
 export const Container = styled.div`
   display: flex;
@@ -38,7 +43,8 @@ export const Container = styled.div`
   }
 `
 
-export const CountDownButton = styled.button`
+export const CountDownButton = styled.button<CountDownProps>`
+  position: relative;
   width: 100%;
   height: 5rem;
   margin-top: 2rem;
@@ -59,7 +65,36 @@ export const CountDownButton = styled.button`
 
   transition: 0.2s ease;
 
-  &:hover {
+  &:disabled {
+    background: var(--gray-line);
+    color: var(--text);
+    cursor: not-allowed;
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    width: ${({ progress }) => `${progress}%`};
+    height: 0.3rem;
+    background: var(--green);
+    border-radius: ${({ progress }) =>
+      progress < 100 ? "0 0 0px 4px" : "0 0 4px 4px"};
+    bottom: 0;
+    left: 0;
+  }
+
+  &:not(:disabled):hover {
     background: var(--blue-dark);
   }
+
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      background: var(--white);
+      color: var(--title);
+      &:not(:disabled):hover {
+        background: var(--red);
+        color: var(--white);
+      }
+    `}
 `

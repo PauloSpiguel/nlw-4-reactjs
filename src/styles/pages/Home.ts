@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
-export const Container = styled.div`
+export const Container = styled.main`
   height: 100vh;
   max-width: 992px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 2.5rem 2rem;
 
   display: flex;
   flex-direction: column;
@@ -16,5 +16,11 @@ export const Container = styled.div`
     grid-template-columns: 1fr 1fr;
     gap: 6.25rem;
     align-items: center;
+
+    padding: 6.5rem 0;
+
+    > div {
+      height: 100%;
+    }
   }
 `
