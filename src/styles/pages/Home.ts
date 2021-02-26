@@ -9,18 +9,12 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
 
-  > section {
+  section {
     flex: 1;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6.25rem;
-    align-items: center;
-
-    padding: 6.5rem 0;
-
-    > div {
-      height: 100%;
-    }
+    align-content: center; //Center content center horizontal grid
   }
 `

@@ -16,6 +16,10 @@ export default createGlobalStyle`
   --blue-dark: #4953b8;
   --blue-twitter: #2aa9e0;
 
+  --dark: #282c30;
+  --dark-line: #22223b
+  --light: #f1f1f1;
+
 }
 
 * {
@@ -41,6 +45,7 @@ body, input, textarea, button {
 }
 
 body {
+  transition: background 0.2s linear;
   background: var(--background);
   color: var(--text);
 }

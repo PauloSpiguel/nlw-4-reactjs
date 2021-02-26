@@ -1,28 +1,37 @@
-import React from "react"
+import React, { useContext } from "react"
+
+import { useChallenges } from "../../contexts/ChallengesContext"
+import { useTheme } from "../../contexts/ThemeContext"
 
 import { Container } from "./styles"
 
 const ChallengeBox: React.FC = () => {
-  const hasActiveChallenge = true
+  const { activeChallenge, resetChallenge } = useChallenges()
+
+  const { theme } = useTheme()
 
   return (
-    <Container>
-      {hasActiveChallenge ? (
+    <Container isDark={theme.name === "dark"}>
+      {activeChallenge ? (
         <div className="active">
-          <header>Ganhe 400 xp</header>
+          <header>Ganhe {activeChallenge.amount} xp</header>
           <main>
-            <img src="icons/body.svg" />
+            <img src={`icons/${activeChallenge.type}.svg`} />
             <strong>Novo desafio</strong>
-            <p>Levante e faça uma caminhada de 3 minutos</p>
-            <footer>
-              <button type="button" className="failedButton">
-                Falhou
-              </button>
-              <button type="button" className="succeededButton">
-                Completei
-              </button>
-            </footer>
+            <p>{activeChallenge.description}</p>
           </main>
+          <footer>
+            <button
+              type="button"
+              className="failedButton"
+              onClick={resetChallenge}
+            >
+              Falhei
+            </button>
+            <button type="button" className="succeededButton">
+              Completei
+            </button>
+          </footer>
         </div>
       ) : (
         <div className="notActive">

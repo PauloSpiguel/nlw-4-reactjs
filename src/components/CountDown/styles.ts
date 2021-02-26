@@ -1,15 +1,19 @@
 import styled, { css } from "styled-components"
 
-type CountDownProps = {
+interface ContainerProps {
+  isDark: boolean
+}
+
+interface CountDownProps extends ContainerProps {
   isActive: boolean
   progress: number
 }
 
-export const Container = styled.div`
+export const Container = styled.div<ContainerProps>`
   display: flex;
   align-items: center;
   font-family: Rajdhani;
-  color: var(--title);
+  color: ${({ isDark }) => (isDark ? "var(--white)" : "var(--title)")};
 
   > div {
     flex: 1;
@@ -18,8 +22,10 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-evenly;
 
-    background: var(--white);
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+    transition: background 0.2s linear;
+
+    background: ${({ isDark }) => (isDark ? "var(--dark)" : "var(--white)")};
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.05);
     border-radius: 5px;
     font-size: 8.5rem;
     text-align: center;
@@ -29,11 +35,13 @@ export const Container = styled.div`
     }
 
     & span:first-child {
-      border-right: 1px solid #f0f1f3;
+      border-right: 1px solid
+        ${({ isDark }) => (isDark ? "var(--background)" : "#f0f1f3")};
     }
 
     & span:last-child {
-      border-left: 1px solid #f0f1f3;
+      border-left: 1px solid
+        ${({ isDark }) => (isDark ? "var(--background)" : "#f0f1f3")};
     }
   }
 
@@ -63,10 +71,11 @@ export const CountDownButton = styled.button<CountDownProps>`
   font-size: 1.25rem;
   font-weight: 600;
 
-  transition: 0.2s ease;
+  transition: all 0.2s ease;
 
   &:disabled {
-    background: var(--gray-line);
+    background: ${({ isDark }) =>
+      isDark ? "var(--dark)" : "var(--gray-line)"};
     color: var(--text);
     cursor: not-allowed;
   }
@@ -87,11 +96,12 @@ export const CountDownButton = styled.button<CountDownProps>`
     background: var(--blue-dark);
   }
 
-  ${({ isActive }) =>
+  ${({ isActive, isDark }) =>
     isActive &&
     css`
-      background: var(--white);
+      background: ${isDark ? "var(--dark)" : "var(--gray-line)"};
       color: var(--title);
+
       &:not(:disabled):hover {
         background: var(--red);
         color: var(--white);

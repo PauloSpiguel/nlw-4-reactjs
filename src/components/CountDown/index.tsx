@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 
-import { BsCheckCircle } from "react-icons/bs"
+import { FcOk } from "react-icons/fc"
+
+import { useChallenges } from "../../contexts/ChallengesContext"
+import { useTheme } from "../../contexts/ThemeContext"
 
 import { CountDownButton, Container } from "./styles"
 
@@ -19,6 +22,10 @@ const CountDown: React.FC = () => {
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, "0").split("")
   const [secondLeft, secondRight] = String(seconds).padStart(2, "0").split("")
 
+  const { startNewChallenge } = useChallenges()
+
+  const { theme } = useTheme()
+
   function handleCountDown() {
     setIsActive(!isActive)
     if (isActive) {
@@ -35,6 +42,7 @@ const CountDown: React.FC = () => {
     } else if (isActive && time === 0) {
       setHasFinish(true)
       setIsActive(false)
+      startNewChallenge()
     }
   }, [isActive, time])
 
@@ -44,7 +52,7 @@ const CountDown: React.FC = () => {
 
   return (
     <>
-      <Container>
+      <Container isDark={theme.name === "dark"}>
         <div>
           <span>{minuteLeft}</span>
           <span>{minuteRight}</span>
@@ -56,19 +64,24 @@ const CountDown: React.FC = () => {
         </div>
       </Container>
       <CountDownButton
+        isDark={theme.name === "dark"}
         disabled={hasFinish}
         isActive={isActive}
         onClick={handleCountDown}
         progress={progress}
       >
         {isActive ? (
-          "Abandonar ciclo"
+          <>
+            <img
+              src="icons/clock.gif"
+              alt="Clock Time"
+              style={{ height: "1.5rem" }}
+            />
+            Abandonar ciclo
+          </>
         ) : hasFinish ? (
           <>
-            <BsCheckCircle
-              style={{ marginRight: "0.3rem" }}
-              color="var(--green)"
-            />
+            <FcOk style={{ marginRight: "0.3rem" }} color="var(--green)" />
             Ciclo encerrado
           </>
         ) : (
