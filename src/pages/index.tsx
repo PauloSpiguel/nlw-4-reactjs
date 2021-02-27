@@ -7,28 +7,31 @@ import Header from "../components/Header"
 import Profile from "../components/Profile"
 import { Container } from "../styles/pages/Home"
 
+import { CountDownProvider } from "../contexts/CountDownContext"
+
 export default function Home() {
   return (
     <>
       <Head>
         <title>Home | Byr App</title>
       </Head>
+      <CountDownProvider>
+        <Container>
+          <Header />
+          <ExperienceBar />
 
-      <Container>
-        <Header />
-        <ExperienceBar />
-
-        <section>
-          <div>
-            <Profile />
-            <CompletedChallenges />
-            <CountDown />
-          </div>
-          <div>
-            <ChallengeBox />
-          </div>
-        </section>
-      </Container>
+          <section>
+            <div>
+              <Profile />
+              <CompletedChallenges />
+              <CountDown />
+            </div>
+            <div>
+              <ChallengeBox />
+            </div>
+          </section>
+        </Container>
+      </CountDownProvider>
     </>
   )
 }

@@ -1,14 +1,26 @@
 import React, { useContext } from "react"
 
 import { useChallenges } from "../../contexts/ChallengesContext"
+import { useCountDown } from "../../contexts/CountDownContext"
 import { useTheme } from "../../contexts/ThemeContext"
 
 import { Container } from "./styles"
 
 const ChallengeBox: React.FC = () => {
-  const { activeChallenge, resetChallenge } = useChallenges()
+  const { activeChallenge, resetChallenge, completeChallenge } = useChallenges()
+  const { resetCountDown } = useCountDown()
 
   const { theme } = useTheme()
+
+  function handleChallengeSucceeded() {
+    completeChallenge()
+    resetCountDown()
+  }
+
+  function handleChallengeFailed() {
+    resetChallenge()
+    resetCountDown()
+  }
 
   return (
     <Container isDark={theme.name === "dark"}>
@@ -24,11 +36,15 @@ const ChallengeBox: React.FC = () => {
             <button
               type="button"
               className="failedButton"
-              onClick={resetChallenge}
+              onClick={handleChallengeFailed}
             >
               Falhei
             </button>
-            <button type="button" className="succeededButton">
+            <button
+              type="button"
+              className="succeededButton"
+              onClick={handleChallengeSucceeded}
+            >
               Completei
             </button>
           </footer>

@@ -1,18 +1,19 @@
 import { ReactNode } from "react"
+
+import ThemeContext from "./ThemeContext"
 import { ChallengesProvider } from "./ChallengesContext"
 import { SettingsProvider } from "./SettingsContext"
-import ThemeContext from "./ThemeContext"
 
 type AppProviderProps = {
   children: ReactNode
 }
 
 const AppProvider = ({ children }: AppProviderProps) => (
-  <SettingsProvider>
-    <ThemeContext>
+  <ThemeContext>
+    <SettingsProvider>
       <ChallengesProvider>{children}</ChallengesProvider>
-    </ThemeContext>
-  </SettingsProvider>
+    </SettingsProvider>
+  </ThemeContext>
 )
 
 export default AppProvider
