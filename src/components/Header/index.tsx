@@ -14,12 +14,12 @@ const Header: React.FC = () => {
   return (
     <Container isDark={theme.name === "dark"}>
       <img src={logo} alt="logo" />
-      <nav>
+      {/* <nav>
         <FcAreaChart />
         <FcFaq />
         <FcOnlineSupport />
         <img src="icons/anonymous.svg" alt="Sign in" />
-      </nav>
+      </nav> */}
 
       <ToggleThemeMode />
     </Container>
