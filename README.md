@@ -33,11 +33,11 @@
   <img alt="ByrApp" src=".github/logo.png" width="120px">
 </p>
 
-## 🧪 Why the name ByrApp?
+## 🎭 Why the name ByrApp?
 
 Byr is a word derived from the Tupí language of the Brazilian Indians and means, to get up, to move.
 
-## 🧪 Technologies
+## 📟 Technologies
 
 This project was developed using the following technologies:
 
