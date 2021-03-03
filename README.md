@@ -1,10 +1,12 @@
 <h1 align="center">
     <strong>Modo Light</strong>
+    </br>
     <img alt="Byr.it" title="Byr.it" src=".github/app-light.png" />
 </h1>
 
 <h1 align="center">
     <strong>Modo Light</strong>
+    </br>
     <img alt="Byr.it" title="Byr.it" src=".github/app-dark.png" />
 </h1>
 
