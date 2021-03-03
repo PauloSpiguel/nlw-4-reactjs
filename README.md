@@ -2,6 +2,14 @@
     <img alt="Byr.it" title="Byr.it" src=".github/app-light.png" />
 </h1>
 
+<strong>Modo Light</strong>
+
+<h1 align="center">
+    <img alt="Byr.it" title="Byr.it" src=".github/app-light.png" />
+</h1>
+
+<strong>Modo Light</strong>
+
 <p align="center">
   <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -22,7 +30,7 @@
 <br>
 
 <p align="center">
-  <img alt="Moveit" src=".github/icon.svg" width="120px">
+  <img alt="Moveit" src=".github/logo.png" width="120px">
 </p>
 
 ## 🧪 Technologies
@@ -42,7 +50,7 @@ This project was developed using the following technologies:
 Clone the project and access the folder
 
 ```bash
-$ git clone git@github.com:PauloSpiguel/nlw4_byr-app.git && cd nlw04-moveit
+$ git clone git@github.com:PauloSpiguel/nlw4_byr-app.git && cd nlw4_byr-app
 ```
 
 Follow the steps below
