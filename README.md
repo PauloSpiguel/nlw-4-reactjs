@@ -5,7 +5,7 @@
 <strong>Modo Light</strong>
 
 <h1 align="center">
-    <img alt="Byr.it" title="Byr.it" src=".github/app-light.png" />
+    <img alt="Byr.it" title="Byr.it" src=".github/app-dark.png" />
 </h1>
 
 <strong>Modo Light</strong>
@@ -30,8 +30,12 @@
 <br>
 
 <p align="center">
-  <img alt="Moveit" src=".github/logo.png" width="120px">
+  <img alt="ByrApp" src=".github/logo.png" width="120px">
 </p>
+
+## 🧪 Why the name ByrApp?
+
+Byr is a word derived from the Tupí language of the Brazilian Indians and means, to get up, to move.
 
 ## 🧪 Technologies
 
@@ -40,6 +44,7 @@ This project was developed using the following technologies:
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Styled-Components](https://styled-components.com/)
 
 ## 🔥 Preview
 
@@ -64,7 +69,7 @@ $ yarn dev
 
 ## 💻 Project
 
-[Move.it](https://byr-app.vercel.app/) came to remind you to exercise always! 💜
+[Byr-App](https://byr-app.vercel.app/) came to remind you to exercise always! 💜
 
 This is a project developed during the **[Next Level Week](https://nextlevelweek.com/)**, presented by **[@Rocketseat](https://github.com/Rocketseat)** during February 22-28, 2021.
 
