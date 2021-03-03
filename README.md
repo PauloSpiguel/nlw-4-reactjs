@@ -1,18 +1,12 @@
 <h1 align="center">
+    <strong>Modo Light</strong>
     <img alt="Byr.it" title="Byr.it" src=".github/app-light.png" />
 </h1>
 
-<center>
-   <strong>Modo Light</strong>
-</center>
-
 <h1 align="center">
+    <strong>Modo Light</strong>
     <img alt="Byr.it" title="Byr.it" src=".github/app-dark.png" />
 </h1>
-
-<center>
-   <strong>Modo Light</strong>
-</center>
 
 <p align="center">
   <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
